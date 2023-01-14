@@ -21,7 +21,7 @@ class CreateAccount extends StatelessWidget {
   GlobalKey<FormState> formKey = GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
-    AuthViewModel authViewModel = context.read<AuthViewModel>();
+    AuthViewModel authViewModel = context.watch<AuthViewModel>();
     var size = MediaQuery.of(context).size;
     return GestureDetector(
       onTap: () {

@@ -32,7 +32,7 @@ class _VerifyAccountState extends State<VerifyAccount> {
 
   @override
   Widget build(BuildContext context) {
-    AuthViewModel authViewModel = context.read<AuthViewModel>();
+    AuthViewModel authViewModel = context.watch<AuthViewModel>();
     var size = MediaQuery.of(context).size;
     return GestureDetector(
       onTap: () {
@@ -159,6 +159,10 @@ class _VerifyAccountState extends State<VerifyAccount> {
           email:widget.emailData['email'],
           token: e
       )).then((value){
+        code='';
+        if(mounted){
+          setState(() {});
+        }
         if(value!=null){
           Navigator.pushNamed(context,Register.routeName,arguments: widget.emailData['email']);
         }

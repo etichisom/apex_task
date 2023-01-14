@@ -1,10 +1,12 @@
 import 'package:apex_task/constant/size.dart';
 import 'package:apex_task/constant/strings.dart';
 import 'package:apex_task/domain/params/register_params.dart';
+import 'package:apex_task/features/authentication/screen/login.dart';
 import 'package:apex_task/features/authentication/screen/verify_account.dart';
 import 'package:apex_task/features/authentication/view_model/auth_view_model.dart';
 import 'package:apex_task/package/country_picker/contry_picker.dart';
 import 'package:apex_task/res/color.dart';
+import 'package:apex_task/utils/text_validator.dart';
 import 'package:apex_task/widget/custom_appbar.dart';
 import 'package:apex_task/widget/custom_button.dart';
 import 'package:apex_task/widget/text_field.dart';
@@ -39,7 +41,7 @@ class _RegisterState extends State<Register> {
    CountryCode? code;
   @override
   Widget build(BuildContext context) {
-    AuthViewModel authViewModel = context.read<AuthViewModel>();
+    AuthViewModel authViewModel = context.watch<AuthViewModel>();
     return GestureDetector(
       onTap: (){
         FocusScope.of(context).unfocus();
@@ -118,24 +120,26 @@ class _RegisterState extends State<Register> {
                     controller: _password,
                     obSecure: true,
                     textInputType: TextInputType.text,
-                    validate: FieldValidator.password(
-                        errorMessage: Strings.invalidPassword
-                    ),
+                    validate: TextValidator.validatePassword,
                   ),
                   SizedBox(height:40.h ,),
                   CustomButton(
                       text:Strings.signUp,
                       onPressed: (){
                         if(formKey.currentState!.validate()){
-                           // authViewModel.register(RegisterParam(
-                           //     fullName: fullName,
-                           //     username: username,
-                           //     email: email,
-                           //     country: country,
-                           //     password: password,
-                           //     deviceName: deviceName))
+                           authViewModel.register(RegisterParam(
+                               fullName: _fullName.text,
+                               username: _userName.text,
+                               email: widget.email,
+                               country: code!.code,
+                               password: _password.text,
+                               )).then((value){
+                                 if(value!=null){
+                                   Navigator.pushNamed(context,Login.routeName);
+                                 }
+                           });
                         }
-                        Navigator.pushNamed(context,VerifyAccount.routeName);
+
                       }
                   ),
                 ],

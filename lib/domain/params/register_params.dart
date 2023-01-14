@@ -12,7 +12,7 @@ class RegisterParam {
      required this.email,
      required this.country,
      required this.password,
-     this.deviceName = "mobile",
+     this.deviceName = "web",
   });
 
   String fullName;
