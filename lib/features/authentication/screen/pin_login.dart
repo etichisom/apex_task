@@ -1,7 +1,9 @@
 import 'package:apex_task/constant/size.dart';
 import 'package:apex_task/constant/strings.dart';
+import 'package:apex_task/data/local_storage/auth_storage.dart';
 import 'package:apex_task/features/authentication/screen/all_set.dart';
 import 'package:apex_task/features/authentication/view_model/auth_view_model.dart';
+import 'package:apex_task/features/dashboard/screens/home.dart';
 import 'package:apex_task/res/color.dart';
 import 'package:apex_task/res/text_stlye.dart';
 import 'package:apex_task/widget/custom_appbar.dart';
@@ -14,20 +16,20 @@ import 'package:provider/provider.dart';
 
 
 // ignore: must_be_immutable
-class SetPin extends StatefulWidget {
+class PinLogin extends StatefulWidget {
 
-  static const String routeName = "SetPin";
-  const SetPin({Key? key}) : super(key: key);
+  static const String routeName = "PinLogin";
+  const PinLogin({Key? key}) : super(key: key);
 
   @override
-  State<SetPin> createState() => _VerifyAccountState();
+  State<PinLogin> createState() => _VerifyAccountState();
 }
 
-class _VerifyAccountState extends State<SetPin> {
+class _VerifyAccountState extends State<PinLogin> {
 
   String code ='';
   GlobalKey<FormState> formKey = GlobalKey<FormState>();
-
+  var user = AuthStorage.getUser();
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
@@ -48,10 +50,10 @@ class _VerifyAccountState extends State<SetPin> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(Strings.setPin,
+                Text("Welcome back ${user!.data!.user!.username!}",
                   style: AppTextTheme.h1,),
                 SizedBox(height: 12.h,),
-                Text(Strings.setPinText,
+                Text(Strings.pinLogin,
                   style:AppTextTheme.light.copyWith(
                       fontWeight: FontWeight.w400,
                       fontSize: 16.sp,
@@ -86,7 +88,7 @@ class _VerifyAccountState extends State<SetPin> {
                 SizedBox(height:67.h ,),
                 code.length!=5?
                 const CustomButton(
-                    text:Strings.createPin,
+                    text:Strings.signIn,
                     onPressed: null
                 )
                     :CustomButton(
@@ -107,11 +109,11 @@ class _VerifyAccountState extends State<SetPin> {
   void setPin(String e,BuildContext context) {
     AuthViewModel authViewModel = context.read<AuthViewModel>();
     if(e.length==5){
-       authViewModel.setPin(e).then((value){
-         if(value==true){
-           Navigator.pushReplacementNamed(context,AllSet.routeName);
-         }
-       });
+      authViewModel.pinLogin(e).then((value){
+        if(value!=null){
+          Navigator.pushReplacementNamed(context,Dashboard.routeName);
+        }
+      });
     }else{
       Fluttertoast.showToast(msg: "Enter a valid pin");
     }

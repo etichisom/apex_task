@@ -49,6 +49,7 @@ static const String signUp = "Sign Up";
   ///set pin
   static const String setPin = "Set your PIN code";
   static const String createPin = "Create PIN";
+  static const String pinLogin = "Enter pin to login to your account";
   static const String setPinText = "We use state-of-the-art security measures to protect your information at all times";
 
 

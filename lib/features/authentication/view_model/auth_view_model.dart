@@ -83,6 +83,24 @@ class AuthViewModel extends BaseViewModel{
     return null;
   }
 
+  Future<UserModel?> pinLogin(String pin)async{
+    try{
+      setState(AppState.busy);
+      if(pin==AuthStorage.getPin()){
+        _userModel=AuthStorage.getUser();
+        setState(AppState.idle);
+        return _userModel;
+      }else{
+        setState(AppState.idle);
+        Fluttertoast.showToast(msg: "Incorrect Pin");
+      }
+    }catch(e){
+      setState(AppState.idle);
+      Fluttertoast.showToast(msg: e.toString());
+    }
+    return null;
+  }
+
 
   Future<Map<String ,dynamic>?> sendEmail(String email)async{
     try{

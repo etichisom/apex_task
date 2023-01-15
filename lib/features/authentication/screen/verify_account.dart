@@ -98,7 +98,7 @@ class _VerifyAccountState extends State<VerifyAccount> {
                  fieldWidth: size.width*0.143,
                  maxLength: 5,
                   onSubmit: (e){
-                   verify(e, context);
+                   //verify(e, context);
                   },
                   onChange: (e){
                   setState(() {
