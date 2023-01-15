@@ -43,6 +43,7 @@ dependencies:
   the_validator: ^2.0.0
   otp_pin_field: ^1.1.2
   custom_timer: ^0.1.2
+  elegant_notification: ^1.6.4
   flutter:
     sdk: flutter
 

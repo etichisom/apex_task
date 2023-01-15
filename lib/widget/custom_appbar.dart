@@ -14,7 +14,7 @@ class CustomAppbar extends StatelessWidget implements PreferredSizeWidget {
     return Padding(
       padding:  EdgeInsets.only(top: 30,left:15.w),
       child: AppBar(
-        leading: Column(
+        leading: Navigator.canPop(context)?Column(
           children: [
             GestureDetector(
               onTap: (){
@@ -26,7 +26,7 @@ class CustomAppbar extends StatelessWidget implements PreferredSizeWidget {
                   child: SvgPicture.asset(AppImage.back)),
             ),
           ],
-        ),
+        ):null,
         backgroundColor: Colors.transparent,
         elevation: 0,
       ),

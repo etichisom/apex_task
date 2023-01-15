@@ -8,6 +8,7 @@ import 'package:apex_task/res/color.dart';
 import 'package:apex_task/widget/custom_appbar.dart';
 import 'package:apex_task/widget/custom_button.dart';
 import 'package:apex_task/widget/text_field.dart';
+import 'package:elegant_notification/elegant_notification.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
@@ -84,6 +85,8 @@ class CreateAccount extends StatelessWidget {
                           authViewModel.sendEmail(_email.text.trim())
                           .then((value){
                             if(value!=null){
+                              /// sending verification code as a notification on the app
+                              /// because the backend is not sending email
                               value.addAll({"email":_email.text});
                               Navigator.pushNamed(context,VerifyAccount.routeName,
                                   arguments: value);

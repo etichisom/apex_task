@@ -20,9 +20,13 @@ class AuthViewModel extends BaseViewModel{
     try{
       setState(AppState.busy);
       UserModel? response = await _authRepository.register(registerParam: registerParam);
-      _userModel =userModel;
+      if(response!=null){
+        _userModel =response;
+        AuthStorage.saveUser(response.toJson());
+      }
       notifyListeners();
       setState(AppState.idle);
+      AuthStorage.clear();
       return response;
     }catch(e){
       setState(AppState.idle);

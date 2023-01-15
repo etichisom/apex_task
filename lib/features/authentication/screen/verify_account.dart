@@ -8,6 +8,7 @@ import 'package:apex_task/res/text_stlye.dart';
 import 'package:apex_task/widget/custom_appbar.dart';
 import 'package:apex_task/widget/custom_button.dart';
 import 'package:apex_task/widget/otp_timer.dart';
+import 'package:elegant_notification/elegant_notification.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:fluttertoast/fluttertoast.dart';
@@ -41,8 +42,8 @@ class _VerifyAccountState extends State<VerifyAccount> {
       child: Scaffold(
         // floatingActionButton: FloatingActionButton(
         //   onPressed: (){
-        //     print(widget.emailData);
-        //   },
+        //    sendOtp(context);
+        //   }
         // ),
         appBar: const CustomAppbar(),
         body: Padding(
@@ -125,7 +126,7 @@ class _VerifyAccountState extends State<VerifyAccount> {
                   children: [
                     OtpTimer(
                         onTap: (){
-                          authViewModel.sendEmail(widget.emailData['email']);
+                          sendOtp(context);
                         }
                     ),
                   ],
@@ -137,6 +138,7 @@ class _VerifyAccountState extends State<VerifyAccount> {
                     onPressed: null
                 )
               :CustomButton(
+                    appState: authViewModel.appState,
                     text:Strings.signUp,
                     onPressed: (){
                       verify(code,context);
@@ -159,16 +161,39 @@ class _VerifyAccountState extends State<VerifyAccount> {
           email:widget.emailData['email'],
           token: e
       )).then((value){
-        code='';
-        if(mounted){
-          setState(() {});
-        }
         if(value!=null){
-          Navigator.pushNamed(context,Register.routeName,arguments: widget.emailData['email']);
+          Navigator.pushReplacementNamed(context, Register.routeName,arguments:widget.emailData['email'] );
         }
       });
     }else{
       Fluttertoast.showToast(msg: "Enter Otp");
     }
+  }
+
+  sendOtp(BuildContext context){
+    var code = widget.emailData['data']['token'];
+    ElegantNotification.success(
+       toastDuration: const Duration(seconds: 30),
+        title:  const Text("Here is your verification Code \nps: backend not sending emails .",
+        style: TextStyle(
+          fontWeight: FontWeight.w400,
+          fontSize: 13
+        ),),
+        description:  Text(code,
+        style:const TextStyle(
+            fontSize:24 ,
+            fontWeight: FontWeight.w700
+        ),)
+    ).show(context);
+    Fluttertoast.showToast(msg: code,toastLength:Toast.LENGTH_LONG );
+  }
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
+      sendOtp(context);
+    });
+
   }
 }

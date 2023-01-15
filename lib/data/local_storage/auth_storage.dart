@@ -8,11 +8,14 @@ class AuthStorage{
 
 
  static void setPin(String pin){
+
   box.write(pinBox, pin);
  }
 
  static clear(){
-  box.erase();
+  box.write(authBox, null);
+  box.write(pinBox,null);
+
  }
 
  static String? getPin(){
