@@ -8,7 +8,6 @@ import 'package:apex_task/res/color.dart';
 import 'package:apex_task/widget/custom_appbar.dart';
 import 'package:apex_task/widget/custom_button.dart';
 import 'package:apex_task/widget/text_field.dart';
-import 'package:elegant_notification/elegant_notification.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';

@@ -8,7 +8,7 @@ import 'package:apex_task/res/text_stlye.dart';
 import 'package:apex_task/widget/custom_appbar.dart';
 import 'package:apex_task/widget/custom_button.dart';
 import 'package:apex_task/widget/otp_timer.dart';
-import 'package:elegant_notification/elegant_notification.dart';
+import 'package:cherry_toast/cherry_toast.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:fluttertoast/fluttertoast.dart';
@@ -172,19 +172,24 @@ class _VerifyAccountState extends State<VerifyAccount> {
 
   sendOtp(BuildContext context){
     var code = widget.emailData['data']['token'];
-    ElegantNotification.success(
-       toastDuration: const Duration(seconds: 30),
-        title:  const Text("Here is your verification Code \nps: backend not sending emails .",
-        style: TextStyle(
-          fontWeight: FontWeight.w400,
-          fontSize: 13
-        ),),
-        description:  Text(code,
-        style:const TextStyle(
-            fontSize:24 ,
-            fontWeight: FontWeight.w700
-        ),)
-    ).show(context);
+    CherryToast(
+        icon: Icons.message,
+        themeColor: Colors.green,
+        title: Text(code,
+          style:const TextStyle(
+              fontSize:24 ,
+              fontWeight: FontWeight.w700
+          ),),
+        displayTitle:  true,
+        toastDuration: const Duration(seconds:  30),
+        description:   const Text("Here is your verification Code \nps: backend not sending emails .",
+          style: TextStyle(
+              fontWeight: FontWeight.w400,
+              fontSize: 13
+          ),),
+        animationDuration: const Duration(milliseconds:  1000),
+        autoDismiss:  false)
+        .show(context);
     Fluttertoast.showToast(msg: code,toastLength:Toast.LENGTH_LONG );
   }
   @override

@@ -5,6 +5,7 @@ class AppTheme{
   static ThemeData lightTheme = ThemeData(
     scaffoldBackgroundColor: AppColor.white,
     brightness: Brightness.light,
+    fontFamily: 'SFPRO',
     elevatedButtonTheme: ElevatedButtonThemeData(
       style:  ElevatedButton.styleFrom(
         backgroundColor: AppColor.primaryColor,
