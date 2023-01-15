@@ -1,7 +1,9 @@
 import 'package:apex_task/constant/size.dart';
 import 'package:apex_task/constant/strings.dart';
+import 'package:apex_task/data/local_storage/auth_storage.dart';
 import 'package:apex_task/domain/params/login_params.dart';
 import 'package:apex_task/features/authentication/screen/create_account.dart';
+import 'package:apex_task/features/authentication/screen/set_pin.dart';
 import 'package:apex_task/features/authentication/view_model/auth_view_model.dart';
 import 'package:apex_task/features/dashboard/screens/home.dart';
 import 'package:apex_task/res/app_image.dart';
@@ -88,7 +90,11 @@ class Login extends StatelessWidget {
                               password: _password.text
                           )).then((value){
                             if(value!=null){
-                              Navigator.pushReplacementNamed(context,Dashboard.routeName);
+                              if(AuthStorage.getPin()!=null){
+                                Navigator.pushReplacementNamed(context,Dashboard.routeName);
+                              }else{
+                                Navigator.pushNamed(context,SetPin.routeName);
+                              }
                             }
                           });
                         }

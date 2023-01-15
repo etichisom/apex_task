@@ -11,6 +11,7 @@ class AppImage{
 
   static const String google ="image/google.png";
   static const String apple ="image/apple.png";
+  static const String allSet ="image/allset.png";
 
 
 

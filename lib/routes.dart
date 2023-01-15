@@ -1,6 +1,8 @@
 
+import 'package:apex_task/features/authentication/screen/all_set.dart';
 import 'package:apex_task/features/authentication/screen/create_account.dart';
 import 'package:apex_task/features/authentication/screen/register.dart';
+import 'package:apex_task/features/authentication/screen/set_pin.dart';
 import 'package:apex_task/features/authentication/screen/verify_account.dart';
 import 'package:apex_task/features/dashboard/screens/home.dart';
 import 'package:apex_task/features/onboarding/onboarding_screen.dart';
@@ -36,6 +38,12 @@ class RouteGenerator {
       case Dashboard.routeName:
         return MaterialPageRoute(
             settings: settings, builder: (_) =>  const Dashboard());
+      case SetPin.routeName:
+        return MaterialPageRoute(
+            settings: settings, builder: (_) =>  const SetPin());
+      case AllSet.routeName:
+        return MaterialPageRoute(
+            settings: settings, builder: (_) =>  const AllSet());
 
 
       default:

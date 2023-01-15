@@ -42,6 +42,15 @@ static const String signUp = "Sign Up";
   static const String verifyAccount = "Verify it’s you";
   static const String confirm = "Confirm";
 
+  ///allSet
+  static const String congratulate = "Congratulations,";
+  static const String congratulateText = "You’ve completed the onboarding,\nyou can start using";
+
+  ///set pin
+  static const String setPin = "Set your PIN code";
+  static const String createPin = "Create PIN";
+  static const String setPinText = "We use state-of-the-art security measures to protect your information at all times";
+
 
   /// Error message
   static const String invalidEmail = "Enter a valid email";

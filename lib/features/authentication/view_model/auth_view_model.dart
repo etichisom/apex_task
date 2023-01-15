@@ -70,6 +70,20 @@ class AuthViewModel extends BaseViewModel{
 
   }
 
+  Future<bool?> setPin(String pin)async{
+    try{
+      setState(AppState.busy);
+      AuthStorage.setPin(pin);
+      setState(AppState.idle);
+      return true;
+    }catch(e){
+      setState(AppState.idle);
+      Fluttertoast.showToast(msg: e.toString());
+    }
+    return null;
+  }
+
+
   Future<Map<String ,dynamic>?> sendEmail(String email)async{
     try{
       setState(AppState.busy);
