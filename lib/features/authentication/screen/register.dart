@@ -2,7 +2,6 @@ import 'package:apex_task/constant/size.dart';
 import 'package:apex_task/constant/strings.dart';
 import 'package:apex_task/domain/params/register_params.dart';
 import 'package:apex_task/features/authentication/screen/login.dart';
-import 'package:apex_task/features/authentication/screen/verify_account.dart';
 import 'package:apex_task/features/authentication/view_model/auth_view_model.dart';
 import 'package:apex_task/package/country_picker/contry_picker.dart';
 import 'package:apex_task/res/color.dart';

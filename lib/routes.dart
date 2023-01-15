@@ -2,6 +2,7 @@
 import 'package:apex_task/features/authentication/screen/create_account.dart';
 import 'package:apex_task/features/authentication/screen/register.dart';
 import 'package:apex_task/features/authentication/screen/verify_account.dart';
+import 'package:apex_task/features/dashboard/screens/home.dart';
 import 'package:apex_task/features/onboarding/onboarding_screen.dart';
 import 'package:apex_task/features/onboarding/splash_screen.dart';
 import 'package:flutter/material.dart';
@@ -32,6 +33,9 @@ class RouteGenerator {
        String email = settings.arguments as String;
         return MaterialPageRoute(
             settings: settings, builder: (_) =>   Register(email:email ,));
+      case Dashboard.routeName:
+        return MaterialPageRoute(
+            settings: settings, builder: (_) =>  const Dashboard());
 
 
       default:
