@@ -2,6 +2,8 @@ import 'package:apex_task/constant/size.dart';
 import 'package:apex_task/constant/strings.dart';
 import 'package:apex_task/data/local_storage/auth_storage.dart';
 import 'package:apex_task/features/authentication/screen/all_set.dart';
+import 'package:apex_task/features/authentication/screen/create_account.dart';
+import 'package:apex_task/features/authentication/screen/login.dart';
 import 'package:apex_task/features/authentication/view_model/auth_view_model.dart';
 import 'package:apex_task/features/dashboard/screens/home.dart';
 import 'package:apex_task/res/color.dart';
@@ -98,6 +100,63 @@ class _VerifyAccountState extends State<PinLogin> {
                     }
                 ),
                 SizedBox(height:40.h ,),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.pushNamed(context, Login.routeName);
+                      },
+                      child: RichText(
+                        text:  TextSpan(
+                            text: "Not you? ",
+                            style: TextStyle(
+                                fontWeight: FontWeight.w400,
+                                fontSize: 16.sp,
+                                color: AppColor.grey),
+                            children: [
+                              TextSpan(
+                                text:"switch account" ,
+                                style: TextStyle(
+                                    fontWeight: FontWeight.w600,
+                                    fontSize: 16.sp,
+                                    color: AppColor.solidGreen
+                                ),
+                              ),
+                            ]),
+                      ),
+                    ),
+                  ],
+                ),
+                SizedBox(height:size.height*0.1 ,),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.pushNamed(context, CreateAccount.routeName);
+                      },
+                      child: RichText(
+                        text:  TextSpan(
+                            text: Strings.doNotHaveAccount,
+                            style: TextStyle(
+                                fontWeight: FontWeight.w400,
+                                fontSize: 16.sp,
+                                color: AppColor.grey),
+                            children: [
+                              TextSpan(
+                                text: Strings.signUp,
+                                style: TextStyle(
+                                    fontWeight: FontWeight.w600,
+                                    fontSize: 16.sp,
+                                    color: AppColor.solidGreen
+                                ),
+                              ),
+                            ]),
+                      ),
+                    ),
+                  ],
+                ),
               ],
             ),
           ),
