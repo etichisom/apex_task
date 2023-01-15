@@ -39,7 +39,7 @@ class AllSet extends StatelessWidget {
             CustomButton(
                 text: Strings.getStarted,
                 onPressed: (){
-                  Navigator.pushReplacementNamed(context,Dashboard.routeName);
+                  Navigator.pushNamedAndRemoveUntil(context, Dashboard.routeName, (route) => false);
                 }
             )
           ],
