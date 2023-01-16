@@ -41,6 +41,7 @@ class _RegisterState extends State<Register> {
    CountryCode? code;
   @override
   Widget build(BuildContext context) {
+    ///creating a instance of the viewModel class
     AuthViewModel authViewModel = context.watch<AuthViewModel>();
     return GestureDetector(
       onTap: (){
@@ -128,6 +129,7 @@ class _RegisterState extends State<Register> {
                       text:Strings.signUp,
                       onPressed: (){
                         if(formKey.currentState!.validate()){
+                          ///Register the user using the register logic on the AuthViewModel
                            authViewModel.register(RegisterParam(
                                fullName: _fullName.text,
                                username: _userName.text,

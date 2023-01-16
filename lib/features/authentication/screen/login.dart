@@ -27,6 +27,7 @@ class Login extends StatelessWidget {
   GlobalKey<FormState> formKey = GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
+    ///creating a instance of the viewModel class
   AuthViewModel authViewModel = context.watch<AuthViewModel>();
     var size = MediaQuery.of(context).size;
     return GestureDetector(
@@ -85,11 +86,14 @@ class Login extends StatelessWidget {
                       appState: authViewModel.appState,
                       onPressed: (){
                         if(formKey.currentState!.validate()){
+                          ///login in the user using the login logic on the AuthViewModel
                           authViewModel.login(LoginParam(
                               email: _email.text,
                               password: _password.text
                           )).then((value){
                             if(value!=null){
+                              ///if the user has a pin he is navigated the the home page , if he does not have a pin he is
+                              ///navigated to the set pin page
                               if(AuthStorage.getPin()!=null){
                                 Navigator.pushReplacementNamed(context,Dashboard.routeName);
                               }else{

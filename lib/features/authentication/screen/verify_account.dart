@@ -155,6 +155,8 @@ class _VerifyAccountState extends State<VerifyAccount> {
   }
 
   void verify(String e,BuildContext context) {
+    ///verify email  using the verifyAccount logic on the AuthViewModel
+    ///if the email if verified successfully the user is navigated the the register screen
     AuthViewModel authViewModel = context.read<AuthViewModel>();
     if(e.length==5){
       authViewModel.verifyAccount(OtpParams(

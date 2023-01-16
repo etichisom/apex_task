@@ -168,6 +168,7 @@ class _VerifyAccountState extends State<PinLogin> {
   void setPin(String e,BuildContext context) {
     AuthViewModel authViewModel = context.read<AuthViewModel>();
     if(e.length==5){
+      ///checking if the pin the user inputted  is correct, if it is correct the user is logged in on the app
       authViewModel.pinLogin(e).then((value){
         if(value!=null){
           Navigator.pushReplacementNamed(context,Dashboard.routeName);
