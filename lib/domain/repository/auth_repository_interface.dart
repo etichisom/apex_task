@@ -3,6 +3,8 @@ import 'package:apex_task/domain/params/otp_param.dart';
 import 'package:apex_task/domain/params/register_params.dart';
 import 'package:apex_task/model/user_model.dart';
 
+
+/// Interface  of the AuthRepository class
 abstract class AuthRepositoryInterface{
 
   Future<UserModel?> register({
