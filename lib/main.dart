@@ -14,8 +14,11 @@ void main() async {
   setupLocator();
   ///initializing of GetStorage for caching of data
   await GetStorage.init();
-  runApp(MultiProvider(
-      providers: [ChangeNotifierProvider(create: (_) => AuthViewModel())],
+  runApp(
+    ///wrapping the app with the provider for managing the state of the app
+      MultiProvider(
+          providers: [
+            ChangeNotifierProvider(create: (_) => AuthViewModel())],
       child: const MyApp()));
 }
 
@@ -24,6 +27,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    ///ScreenUtil is used to give the app a uniform size(height,width,text size)
     return ScreenUtilInit(
         designSize: const Size(393, 851),
         minTextAdapt: true,
