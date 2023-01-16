@@ -12,6 +12,7 @@ import 'package:provider/provider.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   setupLocator();
+  ///initializing of GetStorage for caching of data
   await GetStorage.init();
   runApp(MultiProvider(
       providers: [ChangeNotifierProvider(create: (_) => AuthViewModel())],
