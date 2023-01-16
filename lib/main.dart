@@ -1,4 +1,3 @@
-import 'dart:io';
 
 import 'package:apex_task/features/authentication/view_model/auth_view_model.dart';
 import 'package:apex_task/features/onboarding/splash_screen.dart';
@@ -8,7 +7,6 @@ import 'package:apex_task/routes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get_storage/get_storage.dart';
-import 'package:path_provider/path_provider.dart';
 import 'package:provider/provider.dart';
 
 void main() async {
