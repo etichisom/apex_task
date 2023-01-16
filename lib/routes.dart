@@ -14,6 +14,9 @@ import 'features/authentication/screen/login.dart';
 
 class RouteGenerator {
 
+   /// The class contains all the screen routes
+   /// of the app.
+
   static Route? generateRoute(RouteSettings settings) {
     switch (settings.name) {
       case Splash.routeName:
