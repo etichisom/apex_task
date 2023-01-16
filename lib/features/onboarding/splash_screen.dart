@@ -21,6 +21,9 @@ class _SplashState extends State<Splash> {
     // TODO: implement initState
     super.initState();
     WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
+      ///check if there is a user that is stored on the app and if the user has a pin
+      ///if there is user on the he has a pin ,the user is navigated to the pin login screen
+      ///else he is taking to the intro screen
       if(AuthStorage.getUser()!=null&&AuthStorage.getPin()!=null){
         Navigator.pushReplacementNamed(context, PinLogin.routeName);
       }else{
