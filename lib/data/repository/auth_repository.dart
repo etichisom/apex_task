@@ -13,9 +13,12 @@ import 'package:http/http.dart' as http;
 
 
 class AuthRepository extends AuthRepositoryInterface{
+  ///http client
   var client = http.Client();
-  final Duration _timeout = const Duration(seconds: 10);
 
+
+  ///Network call time out
+  final Duration _timeout = const Duration(seconds: 10);
 
 
   @override
