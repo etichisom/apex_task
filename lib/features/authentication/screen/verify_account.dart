@@ -172,6 +172,9 @@ class _VerifyAccountState extends State<VerifyAccount> {
     }
   }
 
+
+  ///This function send an in app notification containing the otp , this is the because the otp is not sent to the email
+  ///so i did this  for the tester to be able to see the verification code
   sendOtp(BuildContext context){
     var code = widget.emailData['data']['token'];
     CherryToast(
