@@ -3,6 +3,8 @@
 import 'package:apex_task/enums/app_state.dart';
 import 'package:flutter/material.dart';
 
+
+/// all viewModel call extends the BaseViewModel to access the functions
 class BaseViewModel extends ChangeNotifier {
   AppState _appState = AppState.idle;
   AppState get appState => _appState;
