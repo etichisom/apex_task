@@ -1,10 +1,11 @@
-import 'package:apex_task/constant/size.dart';
-import 'package:apex_task/constant/strings.dart';
+
+import 'package:apex_task/core/constant/size.dart';
+import 'package:apex_task/core/constant/strings.dart';
+import 'package:apex_task/core/res/app_image.dart';
+import 'package:apex_task/core/res/color.dart';
 import 'package:apex_task/features/authentication/screen/login.dart';
 import 'package:apex_task/features/authentication/screen/verify_account.dart';
 import 'package:apex_task/features/authentication/view_model/auth_view_model.dart';
-import 'package:apex_task/res/app_image.dart';
-import 'package:apex_task/res/color.dart';
 import 'package:apex_task/widget/custom_appbar.dart';
 import 'package:apex_task/widget/custom_button.dart';
 import 'package:apex_task/widget/text_field.dart';

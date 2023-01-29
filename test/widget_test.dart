@@ -3,7 +3,7 @@ import 'package:apex_task/features/authentication/screen/login.dart';
 import 'package:apex_task/features/authentication/view_model/auth_view_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:apex_task/main.dart' as app;
+import 'package:apex_task/main_production.dart' as app;
 import 'package:provider/provider.dart';
 
 void main() async{

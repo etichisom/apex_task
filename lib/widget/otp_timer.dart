@@ -1,6 +1,6 @@
 
-import 'package:apex_task/res/color.dart';
-import 'package:apex_task/res/text_stlye.dart';
+import 'package:apex_task/core/res/color.dart';
+import 'package:apex_task/core/res/text_stlye.dart';
 import 'package:custom_timer/custom_timer.dart';
 import 'package:flutter/cupertino.dart';
 

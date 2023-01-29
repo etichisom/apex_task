@@ -1,5 +1,6 @@
 
-import 'package:apex_task/res/color.dart';
+
+import 'package:apex_task/core/res/color.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 

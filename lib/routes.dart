@@ -70,8 +70,9 @@ class RouteGenerator {
 class AppRoute{
 
   static final router = GoRouter(
-    initialLocation: AuthStorage.getPin()!=null?
-    PinLogin.routeName:ScreenOnBoarding.routeName,
+    initialLocation:getInitialPage(),
+    // initialLocation: AuthStorage.getPin()!=null?
+    // PinLogin.routeName:ScreenOnBoarding.routeName,
     routes: [
       GoRoute(
         path: Splash.routeName,
@@ -129,5 +130,13 @@ class AppRoute{
 
     ],
   );
+
+  static String getInitialPage(){
+    if(AuthStorage.getPin()!=null&&AuthStorage.getUser()!=null){
+      return PinLogin.routeName;
+    }else{
+      return ScreenOnBoarding.routeName;
+    }
+  }
 
 }

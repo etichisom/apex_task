@@ -1,6 +1,8 @@
 
 
-import 'package:apex_task/constant/strings.dart';
+
+
+import 'package:apex_task/core/constant/strings.dart';
 
 class TextValidator{
 

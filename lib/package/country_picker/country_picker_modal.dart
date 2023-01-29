@@ -1,4 +1,5 @@
-import 'package:apex_task/res/text_stlye.dart';
+
+import 'package:apex_task/core/res/text_stlye.dart';
 import 'package:apex_task/widget/text_field.dart';
 import 'package:fl_country_code_picker/fl_country_code_picker.dart';
 import 'package:flutter/cupertino.dart';
@@ -181,17 +182,6 @@ class _KCountryCodePickerModalState extends State<KCountryCodePickerModal> {
                     ),
                   ),
                 );
-                return ListTile(
-                  onTap: () => Navigator.pop(context, code),
-                  leading: code.flagImage,
-                  title: Text(code.name),
-                  trailing: _ListTrailing(
-                    code: code,
-                    favorites: widget.favorites,
-                    icon: widget.favoritesIcon,
-                    showDialCode: widget.showDialCode,
-                  ),
-                );
               },
             ),
           ),
@@ -201,51 +191,4 @@ class _KCountryCodePickerModalState extends State<KCountryCodePickerModal> {
   }
 }
 
-class _ListTrailing extends StatelessWidget {
-  const _ListTrailing({
-    Key? key,
-    required this.code,
-    required this.favorites,
-    required this.icon,
-    required this.showDialCode,
-  }) : super(key: key);
-  final CountryCode code;
-  final List<String> favorites;
-  final Icon icon;
-  final bool showDialCode;
 
-  @override
-  Widget build(BuildContext context) {
-    if (favorites.isNotEmpty) {
-      final index = favorites.indexWhere((f) => f == code.code);
-      final iconWidth = MediaQuery.of(context).size.width * 0.2;
-      return SizedBox(
-        width: iconWidth,
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            if (showDialCode) Text(code.dialCode) else const SizedBox(),
-            if (index != -1) icon,
-          ],
-        ),
-      );
-    } else {
-      return showDialCode ? Text(code.dialCode) : const SizedBox();
-    }
-  }
-}
-
-class _ModalTitle extends StatelessWidget {
-  const _ModalTitle({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return const Padding(
-      padding: EdgeInsets.all(16),
-      child: Text(
-        'Select your country',
-        style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-      ),
-    );
-  }
-}

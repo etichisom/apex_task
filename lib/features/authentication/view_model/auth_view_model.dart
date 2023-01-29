@@ -7,7 +7,7 @@ import 'package:apex_task/domain/params/login_params.dart';
 import 'package:apex_task/domain/params/otp_param.dart';
 import 'package:apex_task/domain/params/register_params.dart';
 
-import 'package:apex_task/locator.dart';
+import 'package:apex_task/config/locator.dart';
 import 'package:apex_task/model/user_model.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 
@@ -32,7 +32,6 @@ class AuthViewModel extends BaseViewModel{
       notifyListeners();
       /// tell the Ui that the app is no longer making and api call and we should remove the loader
       setState(AppState.idle);
-      AuthStorage.clear();
       return response;
     }catch(e){
       setState(AppState.idle);

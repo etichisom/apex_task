@@ -27,7 +27,7 @@ apply from: "$flutterRoot/packages/flutter_tools/gradle/flutter.gradle"
 
 android {
     compileSdkVersion 33
-    ndkVersion flutter.ndkVersion
+    //ndkVersion flutter.ndkVersion
 
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
@@ -43,12 +43,9 @@ android {
     }
 
     defaultConfig {
-        // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
         applicationId "com.example.apex_task"
-        // You can update the following values to match your application needs.
-        // For more information, see: https://docs.flutter.dev/deployment/android#reviewing-the-build-configuration.
         minSdkVersion 22
-        targetSdkVersion flutter.targetSdkVersion
+        targetSdkVersion 33
         versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName
     }
@@ -60,6 +57,22 @@ android {
             signingConfig signingConfigs.debug
         }
     }
+
+    flavorDimensions "default"
+    productFlavors {
+        production {
+            dimension "default"
+            applicationIdSuffix ""
+            resValue "string", "app_name", "Smart pay"
+        }
+        development {
+            dimension "default"
+            applicationIdSuffix ".dev"
+            resValue "string", "app_name", "Smart pay Dev"
+        }
+    }
+
+
 }
 
 flutter {

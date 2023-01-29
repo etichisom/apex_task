@@ -1,8 +1,10 @@
-import 'package:apex_task/constant/strings.dart';
+
+import 'package:apex_task/core/constant/strings.dart';
+import 'package:apex_task/core/res/app_image.dart';
+import 'package:apex_task/core/res/text_stlye.dart';
 import 'package:apex_task/features/authentication/view_model/auth_view_model.dart';
 import 'package:apex_task/features/dashboard/screens/home.dart';
-import 'package:apex_task/res/app_image.dart';
-import 'package:apex_task/res/text_stlye.dart';
+
 import 'package:apex_task/widget/custom_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';

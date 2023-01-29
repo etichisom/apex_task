@@ -1,4 +1,5 @@
-import 'package:apex_task/res/color.dart';
+
+import 'package:apex_task/core/res/color.dart';
 import 'package:flutter/material.dart';
 
 class AppTheme{

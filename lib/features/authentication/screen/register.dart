@@ -1,12 +1,13 @@
-import 'package:apex_task/constant/size.dart';
-import 'package:apex_task/constant/strings.dart';
+
+import 'package:apex_task/core/constant/size.dart';
+import 'package:apex_task/core/constant/strings.dart';
+import 'package:apex_task/core/res/color.dart';
+import 'package:apex_task/core/utils/text_validator.dart';
 import 'package:apex_task/domain/params/register_params.dart';
 import 'package:apex_task/features/authentication/screen/login.dart';
 import 'package:apex_task/features/authentication/screen/set_pin.dart';
 import 'package:apex_task/features/authentication/view_model/auth_view_model.dart';
 import 'package:apex_task/package/country_picker/contry_picker.dart';
-import 'package:apex_task/res/color.dart';
-import 'package:apex_task/utils/text_validator.dart';
 import 'package:apex_task/widget/custom_appbar.dart';
 import 'package:apex_task/widget/custom_button.dart';
 import 'package:apex_task/widget/text_field.dart';

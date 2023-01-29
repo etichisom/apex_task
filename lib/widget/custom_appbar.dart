@@ -1,5 +1,6 @@
 
-import 'package:apex_task/res/app_image.dart';
+
+import 'package:apex_task/core/res/app_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';

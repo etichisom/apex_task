@@ -1,5 +1,5 @@
+import 'package:apex_task/core/res/text_stlye.dart';
 import 'package:apex_task/features/authentication/view_model/auth_view_model.dart';
-import 'package:apex_task/res/text_stlye.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
