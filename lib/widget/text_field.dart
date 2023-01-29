@@ -43,6 +43,7 @@ class _FieldState extends State<Field> {
     return GestureDetector(
       onTap:widget.onTap ,
       child: TextFormField(
+        key: widget.key,
         obscureText: secure,
         onChanged: widget.onChanged,
         enabled: widget.enable,

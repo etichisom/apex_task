@@ -8,11 +8,12 @@ import 'package:apex_task/res/text_stlye.dart';
 import 'package:apex_task/widget/custom_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 
 class ScreenOnBoarding extends StatefulWidget {
-  static const String routeName = "onboardingScreen";
+  static const String routeName = "/onboardingScreen";
   const ScreenOnBoarding({Key? key}) : super(key: key);
 
   @override
@@ -141,6 +142,6 @@ class _ScreenOnBoardingState extends State<ScreenOnBoarding> {
   }
 
   goToLogin(BuildContext context){
-    Navigator.pushNamed(context, Login.routeName);
+    context.go(Login.routeName);
   }
 }

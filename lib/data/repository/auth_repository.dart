@@ -1,7 +1,7 @@
 import 'dart:async';
 import 'dart:convert';
 import 'dart:io';
-import 'package:apex_task/config/api_url.dart';
+import 'package:apex_task/config/api/api_url.dart';
 import 'package:apex_task/domain/params/login_params.dart';
 import 'package:apex_task/domain/params/otp_param.dart';
 import 'package:apex_task/domain/params/register_params.dart';

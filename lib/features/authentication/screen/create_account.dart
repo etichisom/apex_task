@@ -10,12 +10,14 @@ import 'package:apex_task/widget/custom_button.dart';
 import 'package:apex_task/widget/text_field.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get_storage/get_storage.dart';
+import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
 import 'package:the_validator/the_validator.dart';
 
 // ignore: must_be_immutable
 class CreateAccount extends StatelessWidget {
-  static const String routeName = "CreateAccount";
+  static const String routeName = "/CreateAccount";
   CreateAccount({Key? key}) : super(key: key);
   final TextEditingController _email = TextEditingController();
   GlobalKey<FormState> formKey = GlobalKey<FormState>();
@@ -88,8 +90,7 @@ class CreateAccount extends StatelessWidget {
                               /// sending verification code as a notification on the app
                               /// because the backend is not sending email
                               value.addAll({"email":_email.text});
-                              Navigator.pushNamed(context,VerifyAccount.routeName,
-                                  arguments: value);
+                              context.push(VerifyAccount.routeName,extra: value);
                             }
                           });
                         }
@@ -121,7 +122,7 @@ class CreateAccount extends StatelessWidget {
                     children: [
                       GestureDetector(
                         onTap: () {
-                          Navigator.pushNamed(context, Login.routeName);
+                          context.push(Login.routeName);
                         },
                         child: RichText(
                           text: TextSpan(

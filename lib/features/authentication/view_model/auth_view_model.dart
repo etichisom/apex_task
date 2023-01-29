@@ -1,10 +1,12 @@
-import 'package:apex_task/common/base_view_model.dart';
+
+import 'package:apex_task/config/common/base_view_model.dart';
+import 'package:apex_task/config/enums/app_state.dart';
 import 'package:apex_task/data/local_storage/auth_storage.dart';
 import 'package:apex_task/data/repository/auth_repository.dart';
 import 'package:apex_task/domain/params/login_params.dart';
 import 'package:apex_task/domain/params/otp_param.dart';
 import 'package:apex_task/domain/params/register_params.dart';
-import 'package:apex_task/enums/app_state.dart';
+
 import 'package:apex_task/locator.dart';
 import 'package:apex_task/model/user_model.dart';
 import 'package:fluttertoast/fluttertoast.dart';

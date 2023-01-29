@@ -42,6 +42,7 @@ dependencies:
   otp_pin_field: ^1.1.2
   custom_timer: ^0.1.2
   cherry_toast: ^1.0.9
+  go_router: ^6.0.1
   flutter:
     sdk: flutter
 
@@ -51,6 +52,8 @@ dependencies:
   cupertino_icons: ^1.0.2
 
 dev_dependencies:
+  integration_test:
+    sdk: flutter
   flutter_native_splash: ^2.2.16
   flutter_test:
     sdk: flutter

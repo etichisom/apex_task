@@ -6,10 +6,11 @@ import 'package:apex_task/res/text_stlye.dart';
 import 'package:apex_task/widget/custom_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
 
 class AllSet extends StatelessWidget {
-  static const String routeName = " AllSet";
+  static const String routeName = "/AllSet";
   const AllSet({Key? key}) : super(key: key);
 
   @override
@@ -39,7 +40,8 @@ class AllSet extends StatelessWidget {
             CustomButton(
                 text: Strings.getStarted,
                 onPressed: (){
-                  Navigator.pushNamedAndRemoveUntil(context, Dashboard.routeName, (route) => false);
+                  context.go(Dashboard.routeName);
+                  //Navigator.pushNamedAndRemoveUntil(context, Dashboard.routeName, (route) => false);
                 }
             )
           ],

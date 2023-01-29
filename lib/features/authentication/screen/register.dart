@@ -13,13 +13,14 @@ import 'package:apex_task/widget/text_field.dart';
 import 'package:fl_country_code_picker/fl_country_code_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
 import 'package:the_validator/the_validator.dart';
 
 // ignore: must_be_immutable
 class Register extends StatefulWidget {
   final String email;
-  static const String routeName = "Register";
+  static const String routeName = "/Register";
   const Register({Key? key, required this.email}) : super(key: key);
 
   @override
@@ -138,7 +139,8 @@ class _RegisterState extends State<Register> {
                                password: _password.text,
                                )).then((value){
                                  if(value!=null){
-                                   Navigator.pushNamedAndRemoveUntil(context, SetPin.routeName, (route) => false);
+                                   context.go(SetPin.routeName);
+
                                  }
                            });
                         }

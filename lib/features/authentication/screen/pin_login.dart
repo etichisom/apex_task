@@ -13,6 +13,7 @@ import 'package:apex_task/widget/custom_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:go_router/go_router.dart';
 import 'package:otp_pin_field/otp_pin_field.dart';
 import 'package:provider/provider.dart';
 
@@ -20,7 +21,7 @@ import 'package:provider/provider.dart';
 // ignore: must_be_immutable
 class PinLogin extends StatefulWidget {
 
-  static const String routeName = "PinLogin";
+  static const String routeName = "/PinLogin";
   const PinLogin({Key? key}) : super(key: key);
 
   @override
@@ -105,7 +106,7 @@ class _VerifyAccountState extends State<PinLogin> {
                   children: [
                     GestureDetector(
                       onTap: () {
-                        Navigator.pushNamed(context, Login.routeName);
+                        context.push(Login.routeName);
                       },
                       child: RichText(
                         text:  TextSpan(
@@ -134,7 +135,7 @@ class _VerifyAccountState extends State<PinLogin> {
                   children: [
                     GestureDetector(
                       onTap: () {
-                        Navigator.pushNamed(context, CreateAccount.routeName);
+                        context.push(CreateAccount.routeName);
                       },
                       child: RichText(
                         text:  TextSpan(
@@ -171,7 +172,8 @@ class _VerifyAccountState extends State<PinLogin> {
       ///checking if the pin the user inputted  is correct, if it is correct the user is logged in on the app
       authViewModel.pinLogin(e).then((value){
         if(value!=null){
-          Navigator.pushReplacementNamed(context,Dashboard.routeName);
+          context.go(Dashboard.routeName);
+          //Navigator.pushReplacementNamed(context,Dashboard.routeName);
         }
       });
     }else{

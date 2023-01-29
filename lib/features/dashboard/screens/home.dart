@@ -4,12 +4,12 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 class Dashboard extends StatelessWidget {
-  static const String routeName = "Dashboard";
+  static const String routeName = "/dashboard";
   const Dashboard({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    AuthViewModel authViewModel = context.watch<AuthViewModel>();
+    AuthViewModel authViewModel = context.read<AuthViewModel>();
     var user = authViewModel.userModel!.data!.user!;
     return Scaffold(
        body: Center(child: Text("Welcome ${user.username!}",

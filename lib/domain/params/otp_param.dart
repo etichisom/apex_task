@@ -1,8 +1,3 @@
-// To parse this JSON data, do
-//
-//     final otpParams = otpParamsFromJson(jsonString);
-
-import 'dart:convert';
 
 
 class OtpParams {

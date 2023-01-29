@@ -15,11 +15,7 @@ class LoginParam {
   String password;
   String deviceName;
 
-  factory LoginParam.fromJson(Map<String, dynamic> json) => LoginParam(
-    email: json["email"],
-    password: json["password"],
-    deviceName: json["device_name"],
-  );
+
 
   Map<String, dynamic> toJson() => {
     "email": email,

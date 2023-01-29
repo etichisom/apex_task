@@ -1,6 +1,7 @@
 
 
-import 'package:apex_task/enums/app_state.dart';
+
+import 'package:apex_task/config/enums/app_state.dart';
 import 'package:flutter/material.dart';
 
 

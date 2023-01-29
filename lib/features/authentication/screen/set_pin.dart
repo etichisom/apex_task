@@ -9,6 +9,7 @@ import 'package:apex_task/widget/custom_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:go_router/go_router.dart';
 import 'package:otp_pin_field/otp_pin_field.dart';
 import 'package:provider/provider.dart';
 
@@ -16,7 +17,7 @@ import 'package:provider/provider.dart';
 // ignore: must_be_immutable
 class SetPin extends StatefulWidget {
 
-  static const String routeName = "SetPin";
+  static const String routeName = "/setPin";
   const SetPin({Key? key}) : super(key: key);
 
   @override
@@ -109,7 +110,7 @@ class _VerifyAccountState extends State<SetPin> {
     if(e.length==5){
        authViewModel.setPin(e).then((value){
          if(value==true){
-           Navigator.pushReplacementNamed(context,AllSet.routeName);
+           context.go(AllSet.routeName);
          }
        });
     }else{

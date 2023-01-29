@@ -12,6 +12,7 @@ import 'package:cherry_toast/cherry_toast.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:go_router/go_router.dart';
 import 'package:otp_pin_field/otp_pin_field.dart';
 import 'package:provider/provider.dart';
 
@@ -19,7 +20,7 @@ import 'package:provider/provider.dart';
 // ignore: must_be_immutable
 class VerifyAccount extends StatefulWidget {
   final Map emailData;
-  static const String routeName = "VerifyAccount";
+  static const String routeName = "/verifyAccount";
   const VerifyAccount({Key? key, required this.emailData}) : super(key: key);
 
   @override
@@ -40,11 +41,6 @@ class _VerifyAccountState extends State<VerifyAccount> {
         FocusScope.of(context).unfocus();
       },
       child: Scaffold(
-        // floatingActionButton: FloatingActionButton(
-        //   onPressed: (){
-        //    sendOtp(context);
-        //   }
-        // ),
         appBar: const CustomAppbar(),
         body: Padding(
           padding:  EdgeInsets.only(
@@ -164,7 +160,7 @@ class _VerifyAccountState extends State<VerifyAccount> {
           token: e
       )).then((value){
         if(value!=null){
-          Navigator.pushReplacementNamed(context, Register.routeName,arguments:widget.emailData['email'] );
+          context.go(Register.routeName,extra:widget.emailData['email'] );
         }
       });
     }else{

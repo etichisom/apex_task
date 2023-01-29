@@ -2,6 +2,8 @@ import 'package:apex_task/res/color.dart';
 import 'package:flutter/material.dart';
 
 class AppTheme{
+
+  ///Light theme
   static ThemeData lightTheme = ThemeData(
     scaffoldBackgroundColor: AppColor.white,
     brightness: Brightness.light,
@@ -15,4 +17,8 @@ class AppTheme{
       )
     )
   );
+
+
+
+
 }

@@ -1,4 +1,5 @@
-import 'package:apex_task/enums/app_state.dart';
+
+import 'package:apex_task/config/enums/app_state.dart';
 import 'package:apex_task/res/color.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -31,6 +32,7 @@ class CustomButton extends StatelessWidget {
       height: height.h,
       width: width.w,
       child: ElevatedButton(
+        key: key,
         style: ElevatedButton.styleFrom(
             backgroundColor: color,
             shape: RoundedRectangleBorder(

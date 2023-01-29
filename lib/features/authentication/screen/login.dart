@@ -15,12 +15,13 @@ import 'package:apex_task/widget/custom_button.dart';
 import 'package:apex_task/widget/text_field.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
 import 'package:the_validator/the_validator.dart';
 
 // ignore: must_be_immutable
 class Login extends StatelessWidget {
-  static const String routeName = "loginScreen";
+  static const String routeName = "/loginScreen";
    Login({Key? key}) : super(key: key);
   final TextEditingController _email = TextEditingController();
   final TextEditingController _password = TextEditingController();
@@ -59,6 +60,7 @@ class Login extends StatelessWidget {
                     ),),
                   SizedBox(height: 32.h,),
                   Field(
+                    key: const Key('email'),
                     hint: Strings.email,
                     controller: _email,
                     textInputType: TextInputType.text,
@@ -68,6 +70,7 @@ class Login extends StatelessWidget {
                   ),
                   SizedBox(height:16.h ,),
                   Field(
+                    key: const Key('password'),
                     hint: Strings.password,
                     controller: _password,
                     obSecure: true,
@@ -82,6 +85,7 @@ class Login extends StatelessWidget {
                     ),),
                   SizedBox(height:42.h ,),
                   CustomButton(
+                      key: const Key('login'),
                       text:Strings.signIn,
                       appState: authViewModel.appState,
                       onPressed: (){
@@ -95,9 +99,9 @@ class Login extends StatelessWidget {
                               ///if the user has a pin he is navigated the the home page , if he does not have a pin he is
                               ///navigated to the set pin page
                               if(AuthStorage.getPin()!=null){
-                                Navigator.pushReplacementNamed(context,Dashboard.routeName);
+                                context.go(Dashboard.routeName);
                               }else{
-                                Navigator.pushNamed(context,SetPin.routeName);
+                                context.push(SetPin.routeName);
                               }
                             }
                           });
@@ -123,7 +127,7 @@ class Login extends StatelessWidget {
                     children: [
                       GestureDetector(
                         onTap: () {
-                          Navigator.pushNamed(context, CreateAccount.routeName);
+                          context.push( CreateAccount.routeName);
                         },
                         child: RichText(
                           text:  TextSpan(
