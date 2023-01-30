@@ -1,23 +1,30 @@
+## Getting Started 🚀
+
+This project contains 3 flavors:
+
+- development
+- production
+
+To run the desired flavor either use the launch configuration in VSCode/Android Studio or use the following commands:
+
+```sh
+# Development
+$ flutter run --flavor development --target lib/main_development.dart
+# Production
+$ flutter run --flavor production --target lib/main_production.dart
+```
+
+## Navigation
+Navigator 2.0 with *go_router:*
+
+## Test
+integration test
+
 ## Architecture Pattern : 
 ### Model — View — ViewModel (MVVM)
 - Model: This layer is responsible for the abstraction of the data sources. Model and ViewModel work together to get and save the data.
 - View: The purpose of this layer is to inform the ViewModel about the user’s action. This layer observes the ViewModel and does not contain any kind of     application logic.
 - ViewModel: It exposes those data streams which are relevant to the View. Moreover, it serves as a link between the Model and the View.
-
-## Folder Structure
-- Assets:  Static assets for the app.
-- common:  Resusable class.
-- Features: Screen /UI and features of the app (e.g authentication feature).
-- Resource/ contains the theme of the app and colors.
-- ViewModel/Providers: Interactions outside the app.
-- Utilities: Function or logic used in the app.
-- Widgets: Widgets / Layouts used in the app.
-- Models: Collection of data.
-- domain:  contains the abstract class.
-- data:  network call and Local storage
-- package: in app package
-- config : App configuration 
-
 
 
 ## Local Database
