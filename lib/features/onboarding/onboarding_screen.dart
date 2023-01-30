@@ -119,15 +119,11 @@ class _ScreenOnBoardingState extends State<ScreenOnBoarding> {
                     onDotClicked: (index) {}),
                 SizedBox(height: 30.h,),
                 CustomButton(
+                  key: const Key('getStarted'),
                   text: Strings.getStarted,
                   textColor: Colors.white,
                   onPressed: () {
-                    // if(list.length>index+1){
-                    //   controller.animateToPage(index+1,
-                    //       duration:const Duration(milliseconds: 500), curve: Curves.easeIn);
-                    // }else{
-                    //
-                    // }
+
                     goToLogin(context);
 
                   },

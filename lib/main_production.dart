@@ -8,7 +8,7 @@ import 'package:get_storage/get_storage.dart';
 
 
 
-void main() async {
+Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   AppConfig prodAppConfig = const AppConfig(
     appName: 'SmartPay',

@@ -17,6 +17,7 @@ class Field extends StatefulWidget {
   final bool obSecure,enable;
   final Function()? onTap;
   const Field({
+    super.key,
     this.controller,
     this.height=54,
     this.onTap,
@@ -29,7 +30,9 @@ class Field extends StatefulWidget {
     this.hint="",
     this.textInputType=TextInputType.text,
     this.prefixIcon,
-    Key? key, this.suffixIcon, this.onChanged}) : super(key: key);
+     this.suffixIcon,
+    this.onChanged
+  });
 
   @override
   State<Field> createState() => _FieldState();
@@ -43,7 +46,6 @@ class _FieldState extends State<Field> {
     return GestureDetector(
       onTap:widget.onTap ,
       child: TextFormField(
-        key: widget.key,
         obscureText: secure,
         onChanged: widget.onChanged,
         enabled: widget.enable,

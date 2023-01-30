@@ -12,6 +12,7 @@ class CustomButton extends StatelessWidget {
   final FontWeight fontWeight;
   final AppState appState;
   const CustomButton ({
+        super.key,
         required this.text,
         required this.onPressed,
         this.height = 56,
@@ -22,9 +23,8 @@ class CustomButton extends StatelessWidget {
         this.textSize = 16,
         this.fontWeight = FontWeight.w700,
         this.appState = AppState.idle,
-        Key? key,
-  })
-      : super(key: key);
+
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -32,7 +32,6 @@ class CustomButton extends StatelessWidget {
       height: height.h,
       width: width.w,
       child: ElevatedButton(
-        key: key,
         style: ElevatedButton.styleFrom(
             backgroundColor: color,
             shape: RoundedRectangleBorder(
