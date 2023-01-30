@@ -2,12 +2,12 @@ import 'dart:async';
 import 'dart:convert';
 import 'dart:io';
 import 'package:apex_task/config/api/api_url.dart';
+import 'package:apex_task/data/model/failure.dart';
+import 'package:apex_task/data/model/user_model.dart';
 import 'package:apex_task/domain/params/login_params.dart';
 import 'package:apex_task/domain/params/otp_param.dart';
 import 'package:apex_task/domain/params/register_params.dart';
 import 'package:apex_task/domain/repository/auth_repository_interface.dart';
-import 'package:apex_task/model/failure.dart';
-import 'package:apex_task/model/user_model.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:http/http.dart' as http;
 

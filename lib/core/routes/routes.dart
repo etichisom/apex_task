@@ -11,7 +11,7 @@ import 'package:apex_task/features/onboarding/onboarding_screen.dart';
 import 'package:apex_task/features/onboarding/splash_screen.dart';
 import 'package:go_router/go_router.dart';
 
-import 'features/authentication/screen/login.dart';
+import '../../features/authentication/screen/login.dart';
 
 
 

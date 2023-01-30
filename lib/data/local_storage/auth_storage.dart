@@ -1,4 +1,5 @@
-import 'package:apex_task/model/user_model.dart';
+
+import 'package:apex_task/data/model/user_model.dart';
 import 'package:get_storage/get_storage.dart';
 
 class AuthStorage{

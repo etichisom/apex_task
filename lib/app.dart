@@ -3,7 +3,7 @@
 import 'package:apex_task/config/flavour_config.dart';
 import 'package:apex_task/core/res/theme.dart';
 import 'package:apex_task/features/authentication/view_model/auth_view_model.dart';
-import 'package:apex_task/routes.dart';
+import 'package:apex_task/core/routes/routes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
