@@ -43,6 +43,8 @@ integration test
 -  otp_pin_field:
 -  custom_timer:
 -  elegant_notification:
+-  dotenv 
+-  go_router
 
 <img width="343" alt="Screenshot 2023-01-15 at 19 21 13" src="https://user-images.githubusercontent.com/65232750/212559477-c4c3e839-7519-489f-a661-a967696a237f.png">
 <img width="343" alt="Screenshot 2023-01-15 at 19 21 31" src="https://user-images.githubusercontent.com/65232750/212559495-1507d9f1-ffd3-40cd-a9ea-af6717a4eb47.png">
