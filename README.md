@@ -33,7 +33,7 @@ integration test
 ## State Management
 - [x] Provider
 
-## plugins/package usedbv
+## plugins/package used
 -  provider:
 -  get_it (dependency injection)
 -  http:  (Network calls)
