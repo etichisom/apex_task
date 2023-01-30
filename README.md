@@ -50,5 +50,5 @@ integration test
 <img width="343" alt="Screenshot 2023-01-15 at 19 21 31" src="https://user-images.githubusercontent.com/65232750/212559495-1507d9f1-ffd3-40cd-a9ea-af6717a4eb47.png">
 <img width="343" alt="Screenshot 2023-01-15 at 19 22 11" src="https://user-images.githubusercontent.com/65232750/212559541-9019524b-6ec2-4138-b1c5-b7e3a10b56e2.png">
 
-apk [https://drive.google.com/file/d/19RTWEUla9cBIuO2CAJO-GDaBSD3A2Q2T/view?usp=sharing]
-apptetize [https://appetize.io/app/vgzpaj6kazs545rzmqcq46newu?device=pixel4&osVersion=11.0&scale=75]
+# apk [https://drive.google.com/file/d/19RTWEUla9cBIuO2CAJO-GDaBSD3A2Q2T/view?usp=sharing]
+# apptetize [https://appetize.io/app/vgzpaj6kazs545rzmqcq46newu?device=pixel4&osVersion=11.0&scale=75]
