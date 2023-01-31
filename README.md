@@ -1,6 +1,6 @@
 ## Getting Started 🚀
 
-This project contains 3 flavors:
+This project contains 2 flavors:
 
 - development
 - production
